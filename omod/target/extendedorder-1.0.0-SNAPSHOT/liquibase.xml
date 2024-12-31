@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="extended-orders-api-module-2024-12-31" author="mherman22">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <columnExists tableName="orders" columnName="order_by"/>
+            </not>
+        </preConditions>
+        <comment>Adding "order_by" column to the order table</comment>
+        <addColumn tableName="orders">
+            <column name="order_by" type="INT">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint constraintName="orders_order_by"
+                                 baseTableName="orders" baseColumnNames="order_by"
+                                 referencedTableName="users" referencedColumnNames="user_id"/>
+    </changeSet>
+
+</databaseChangeLog>

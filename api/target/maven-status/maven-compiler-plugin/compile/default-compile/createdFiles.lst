@@ -1,0 +1,7 @@
+org/openmrs/module/extendedorder/api/ExtendedorderService.class
+org/openmrs/module/extendedorder/ExtendedorderConfig.class
+org/openmrs/module/extendedorder/Item.class
+org/openmrs/module/extendedorder/api/dao/ExtendedorderDao.class
+org/openmrs/module/extendedorder/api/impl/ExtendedorderServiceImpl.class
+org/openmrs/module/extendedorder/ExtendedOrder.class
+org/openmrs/module/extendedorder/ExtendedorderActivator.class
